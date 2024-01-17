@@ -1,0 +1,45 @@
+{% extends 'sub/base.html' %}
+
+{% load static %}
+
+{% block content%}
+
+<body>
+    <div class="container bg-light shadow-md ">
+        <a  class="btn btn-outline-dark  btn1 mar-top" href="{% url 'my-store'%}"> <i class="fa fa-arrow-left" aria-hidden="true"></i> &nbsp;Continue shopping</a>
+        
+        <table class="table ">
+            <tr>
+                <th><h5>Items: <strong>3</strong></h5></th>
+                <th><h5>Total: <strong><i class="fa fa-inr" aria-hidden="true"></i>250</strong></h5></th>
+                <th> <a class="btn btn-outline-success  btn1" style="float: right;" href="{% url 'my-checkout'%}">Checkout</a></th>
+            </tr>
+        </table>
+   </div>
+
+   <div class="container bg-light shadow-md">
+        <div class="box-element">
+            <div style="flex: 2;"></div>
+            <div style="flex: 2;"><strong>Iteam</strong></div>
+            <div style="flex: 1;"><strong>Price</strong></div>
+            <div style="flex: 1;"><strong>Quantity</strong></div>
+            <div><strong>Total</strong></div>
+        </div>  
+        <div class="box-row">
+            <div style="flex: 2;"> <img class="row-img" src="{% static 'images/image.jpg'%}" alt=""></div>
+            <div style="flex: 2;">Product 1</div>
+            <div style="flex: 1;"><i class="fa fa-inr" aria-hidden="true"></i>250</div>
+            <div style="flex: 1;">
+                <p class="quantity">2</p>
+                <div class="quantity">
+                    <i class="fa fa-arrow-down chg-quantity" aria-hidden="true"></i>
+                    <i class="fa fa-arrow-up chg-quantity" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div><i class="fa fa-inr" aria-hidden="true"></i>250</div>
+        </div>
+    </div>
+    
+</body>
+
+{% endblock %}
