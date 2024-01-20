@@ -5,40 +5,60 @@
 {% block content%}
 
 <body>
-    <div class="container bg-light shadow-md ">
+    <div class="container shadow-md ">
         <a  class="btn btn-outline-dark  btn1 mar-top" href="{% url 'my-store'%}"> <i class="fa fa-arrow-left" aria-hidden="true"></i> &nbsp;Continue shopping</a>
         
         <table class="table ">
             <tr>
-                <th><h5>Items: <strong>3</strong></h5></th>
-                <th><h5>Total: <strong><i class="fa fa-inr" aria-hidden="true"></i>250</strong></h5></th>
+                <th><h5>Items: <strong> {{ order.get_cart_items }} </strong></h5></th>
+                <th><h5>Total: <strong><i class="fa fa-inr" aria-hidden="true"></i>{{order.get_cart_total|floatformat:2}}</strong></h5></th>
                 <th> <a class="btn btn-outline-success  btn1" style="float: right;" href="{% url 'my-checkout'%}">Checkout</a></th>
             </tr>
         </table>
    </div>
 
-   <div class="container bg-light shadow-md">
+
+   <div class="container  shadow-md">
         <div class="box-element">
             <div style="flex: 2;"></div>
-            <div style="flex: 2;"><strong>Iteam</strong></div>
+            <div style="flex: 2;"><strong>Item</strong></div>
             <div style="flex: 1;"><strong>Price</strong></div>
             <div style="flex: 1;"><strong>Quantity</strong></div>
             <div><strong>Total</strong></div>
-        </div>  
+        </div> 
+
+        {% for item in items%}
         <div class="box-row">
-            <div style="flex: 2;"> <img class="row-img" src="{% static 'images/image.jpg'%}" alt=""></div>
-            <div style="flex: 2;">Product 1</div>
-            <div style="flex: 1;"><i class="fa fa-inr" aria-hidden="true"></i>250</div>
-            <div style="flex: 1;">
-                <p class="quantity">2</p>
-                <div class="quantity">
-                    <i class="fa fa-arrow-down chg-quantity" aria-hidden="true"></i>
-                    <i class="fa fa-arrow-up chg-quantity" aria-hidden="true"></i>
-                </div>
+            <div style="flex: 2;">
+                <img class="row-img" src="{{ item.product.imageURL }}" alt="image description">
             </div>
-            <div><i class="fa fa-inr" aria-hidden="true"></i>250</div>
+            <div style="flex: 2;">{{ item.product.name }}</div>
+            <div style="flex: 1;">
+                <p><i class="fa fa-inr" aria-hidden="true"></i>{{ item.product.price|floatformat:2 }}</p>
+            </div>
+            <div style="flex: 1;">
+            <p class="quantity">{{ item.quantity }}</p>
+            
+                <div class="quantity">
+                    
+                    <i data-product="{{item.product.id}}" data-action="add" class="fa fa-arrow-up chg-quantity update-cart" aria-hidden="true"></i>
+                    <i data-product="{{item.product.id}}" data-action="remove" class="fa fa-arrow-down chg-quantity update-cart" aria-hidden="true"></i>
+                
+                </div>
+
+            </div>
+            <div>
+                <p><i class="fa fa-inr" aria-hidden="true"></i>{{item.get_total}}</p>
+            </div>
+           
         </div>
+        {% endfor%}
+        
+    
     </div>
+    
+    
+
     
 </body>
 

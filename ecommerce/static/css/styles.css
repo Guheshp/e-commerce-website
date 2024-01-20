@@ -3,37 +3,48 @@ h1{
 }
 
 #cart-icon{
-    width: 45px;
-    display: inline-block;
-    border-radius: 30px; 
+    
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px; 
+    width: 45px; 
+    height: auto;
+    margin-right: 5px; 
+}
+#cart-total{
+    margin: 0;
+    position: absolute;
+    top: 0;
+    background-color: #707070;
+    color: aliceblue;
+    left: 1400px;
+    border-radius: 50%;
+    width: 30px;
+    
 }
 
-.shop-section{
+.flex-container {
     display: flex;
-    justify-content:space-around;
-    /* background-color: #f1efef; */
     flex-wrap: wrap;
-    width: 100%;
-}
-#box{
-    height: 350px;
-    background-color: white;
-    padding: 20px 0 15px;
-    margin-top: 10px;  
-}
-.box-content{
+    justify-content: space-between; /* Adjust as needed */
+    
+  }
+
+  .flex-item {
     margin-left: 20px;
     margin-right: 20px;
     margin-top: 20px;
     background-color: white;
     box-shadow: 5px 5px 10px grey;
-    
-   
-}
-.box-content h5{
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .flex-item h6{
     margin-top: 5px;
     border-bottom: 1px solid black;
-}
+  }
+
 .btn1{
     margin-bottom: 10px;
 }
@@ -88,3 +99,84 @@ h1{
     width: 90px;
     margin-bottom: 10px;
 }
+
+.container0{
+   display: flex;
+    column-gap: 20px;
+    padding: 10px;
+
+}
+.box-1{ 
+    width: 50%;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 20px;
+   
+}
+
+.form{
+    padding: 10px;
+}
+
+.form .input-box{
+    margin-top: 10px;
+    width: 100%;
+    color: #707070;
+}
+
+.form .input-box input, .select-box{
+    position: relative;
+    height: 40px;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 7px;
+    padding: 10px;
+    font-size: 1rem;
+    margin-top: 5px;
+    color: #707070;
+}
+
+.form .column {
+    display: flex;
+    column-gap: 20px;
+}
+
+.select-box select{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color:  rgba(var(--bs-light-rgb),var(--bs-bg-opacity))!important;
+    font-size: 1rem;
+    color: #707070;  
+}
+
+.hidden{
+    display: none!important;
+}
+
+.box-2{
+    width: 50%;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 20px;
+}
+.box-3 {
+    height: 40px;
+    width: 100%;
+    background-color:white;
+    
+    border-radius: 10px;
+    /* padding: 10px; */
+    text-align: center;
+    color: #707070; 
+}
+
+.box-3 p{
+    font-size: 1rem;
+    margin-top: 0;
+    text-align: center;
+
+  
+}
+

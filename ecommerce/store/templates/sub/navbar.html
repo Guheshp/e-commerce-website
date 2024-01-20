@@ -48,12 +48,15 @@
             &nbsp;     &nbsp;     &nbsp; 
             
             <div>
+             
 
-                <li class="nav-item">
+                <li class="nav-item ">
     
                     <a class="btn btn-outline-secondary me-2" href="#">LogIn</a>
-                    <a class="btn btn-outline-secondary me-2"href="{% url 'my-cart'%}">
+                    <a class="btn btn-outline-secondary me-4"href="{% url 'my-cart'%}">
+                      <p id="cart-total">{{cartItems}}</p>
                         <img  id="cart-icon" src="{% static 'images/cart.png'%}" alt="">
+                      
                     </a>
                     
     
